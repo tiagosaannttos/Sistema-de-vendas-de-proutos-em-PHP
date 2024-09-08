@@ -1,0 +1,34 @@
+<?php
+
+
+$Produto = readline('Digite o valor do produto: ');
+
+echo"\n========= meu principal=========\n";
+echo "Escolha a forma de pagamento:\n";
+echo "1 - À Vista em Dinheiro ou Pix\n";
+echo "2 - À Vista no cartão de crédito\n";
+echo "3 - Parcelado em duas vezes\n";
+echo "4 - Parcelado em três vezes ou mais\n";
+echo"\n================================\n";
+$formaPagamento = readline('Digite o código da forma de pagamento: ');
+
+
+switch ($formaPagamento) {
+    case 1: 
+        $valorFinal = $Produto * 0.85; 
+        break;
+    case 2: 
+        $valorFinal = $Produto * 0.90; 
+        break;
+    case 3:
+        $valorFinal = $Produto; 
+        break;
+    case 4: 
+        $valorFinal = $Produto * 1.10; 
+        break;
+    default:
+        echo "Código de forma de pagamento inválido.\n";
+        
+}
+
+echo "\nO valor final a ser pago é: " . number_format($valorFinal, 2) . "\n";
